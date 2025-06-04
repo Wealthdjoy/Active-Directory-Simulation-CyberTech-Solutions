@@ -10,7 +10,7 @@ This project is the deployment of a Windows Server Domain Controller (Active Dir
 **CyberTech Solutions** is a small IT services firm with the following structure:
 
 - 1 x Windows Server (AD Domain Controller)
-- 1 x Windows 8 Client PC (Account Department)
+- 1 x Windows 8 Client PC (HR Department)
 - 1 x Windows 7 Client PC (Legacy Software)
 
 ---
@@ -75,7 +75,7 @@ CyberTech.local
 
 Created and linked using **Group Policy Management Console (gpmc.msc)**:
 
-- **GPO Name**: `DisableRemovableDrives`
+- **GPO 1**: `DisableRemovableDrives`
 - **Linked to**: OU: HR and IT Department
 - **Policy Configured**:
   - `Computer Configuration` > `Administrative Templates` > `System` > `Removable Storage Access`
@@ -83,7 +83,7 @@ Created and linked using **Group Policy Management Console (gpmc.msc)**:
 
 Result: USB and external drives are disabled for all users in the **HR and IT OU**.
 
-- **GPO Name**: `DisablePowerOffRestartOption`
+- **GPO 2**: `DisablePowerOffRestartOption`
 - **Linked to**: OU: HR and IT Department
 - **Policy Configured**:
   - `Computer Configuration` > `Administrative Templates` > `System` > `Removable Storage Access`
@@ -96,10 +96,14 @@ Result: Commands disabled for all users in the **HR and IT OU**.
 
 ## Screenshots
 
-- AD Domain Structure
-- GPO Editor Screenshot
-- PC joined to domain
-- [Result of denied shutdown command access](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/Windows_8_Alt_F4_access_denied.PNG)
+- [AD Domain Structure](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/OUs_Groups_and_Users.PNG)
+- [GPO Editor Screenshot](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/Group_policy_management.PNG)
+- [Windows 7-PC joined to domain](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/Windows_7_machine_configuration.PNG)
+- [Windows 8-PC joined to domain](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/Windows_8_machine%20_configuration.PNG)
+- [Result of denied shutdown command access on Windows 7](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/Windows_7_Alt_F4_access_denied.PNG)
+- [Result of denied shutdown command access on Windows 8](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/Windows_8_Alt_F4_access_denied.PNG)
+- [Result of denied PowerOffRestartSleep option on Windows 7](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/PowerOff_Restart_and_Sleep_access_denied_2.PNG)
+- [Result of denied PowerOffRestartSleep option on Windows 8](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/PowerOff_Restart_and_Sleep_access_denied_1.PNG)
 
 ---
 
