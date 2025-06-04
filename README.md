@@ -99,7 +99,7 @@ Result: Commands disabled for all users in the **HR and IT OU**.
 - AD Domain Structure
 - GPO Editor Screenshot
 - PC joined to domain
-- Result of denied USB access
+- [Result of denied shutdown command access](https://github.com/Wealthdjoy/Active-Directory-Simulation-CyberTech-Solutions/blob/main/Screenshots/Windows_8_Alt_F4_access_denied.PNG)
 
 ---
 
