@@ -34,15 +34,15 @@ Router (Gateway: 10.0.5.1)
    ↓
 Switch
  ┌──────┬─────────────┬──────────────┐
- │      │             │              │
-Server  PC1 (Win 8)   PC2 (Win XP)
+ │      │             │              │   
+Server  PC1 (Win 8)   PC2 (Win 7)
 ```
 
 | Device        | IP Address      | Role                        |
 |---------------|----------------|-----------------------------|
 | Windows Server| 10.0.5.5  | AD Domain Controller (DC)   |
 | Windows 8 PC  | DHCP    | Client (Accounts)           |
-| Windows XP PC | DHCP    | Legacy Client               |
+| Windows 7 PC  | DHCP    | Legacy Client               |
 
 ---
 
@@ -62,11 +62,11 @@ Created using **Active Directory Users and Computers**:
 ```
 CyberTech.local
 ├── OU: IT Department
-│   └── Users: Alex.IT
-    └── Users: Charles.IT
+│   └── Users: Dee.IT
 
-├── OU: Sales
-│   └── Users:
+
+├── OU: HR
+│   └── Users: Dove.HR
 ```
 
 ---
@@ -76,12 +76,21 @@ CyberTech.local
 Created and linked using **Group Policy Management Console (gpmc.msc)**:
 
 - **GPO Name**: `DisableRemovableDrives`
-- **Linked to**: OU: IT Department
+- **Linked to**: OU: HR and IT Department
 - **Policy Configured**:
   - `Computer Configuration` > `Administrative Templates` > `System` > `Removable Storage Access`
   - Set **"All Removable Storage classes: Deny all access"** to **Enabled**
 
-Result: USB and external drives are disabled for all users in the **Accounts OU**.
+Result: USB and external drives are disabled for all users in the **HR and IT OU**.
+
+- **GPO Name**: `DisablePowerOffRestartOption`
+- **Linked to**: OU: HR and IT Department
+- **Policy Configured**:
+  - `Computer Configuration` > `Administrative Templates` > `System` > `Removable Storage Access`
+  - Set **"Remove and prevent all access to shutdown, restart and hibernate commands"** to **Enabled**
+
+Result: Commands disabled for all users in the **HR and IT OU**.
+
 
 ---
 
@@ -105,5 +114,5 @@ Result: USB and external drives are disabled for all users in the **Accounts OU*
 
 ## Author
 
-**Aliu B. Sanusi**  
+**Dayo Sonibare**  
 Cybersecurity Analyst  
